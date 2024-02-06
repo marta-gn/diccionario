@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Tornar from '../../components/Tornar.astro';
+
+if (Astro.request.method === 'POST') {
+  const data = await Astro.request.formData()
+  const inici = data.get('inici')
+  console.log(inici)
+  return Astro.redirect('/words/'+inici)
+}
+
+---
+
+<Layout titol="Paraules que comencen per...">
+    
+    <Tornar url="/" />
+
+<div class="flex items-center justify-center">
+  <form method='post'>
+    <input type='text' placeholder="Buscar" class="bg-white shadow-md rounded px-8 pt-4 pb-3 mb-4" name='inici'/>
+
+    <button class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">Enviar</button>
+  </form>
+</div>
+    
+  <div class="flex items justify-center my-5">
+    Aqui tens un parell d'exemples
+  </div>
+
+    <div class="flex items justify-center">
+    
+        <a class=" ml-5 mr-5 items-center justify-center px-3 py-2 text-base font-small text-center text-white bg-orange-700 rounded-lg hover:bg-orange-900 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900" href="/words/aca" >Paraules que comencen per ACA</a>
+
+        <a class="mr-5 items-center justify-center px-3 py-2 text-base font-small text-center text-white bg-orange-700 rounded-lg hover:bg-orange-900 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900" href="/words/aba" >Paraules que comencen per ABA</a>
+    </div>
+</Layout>
+
+

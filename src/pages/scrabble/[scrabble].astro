@@ -1,0 +1,44 @@
+---
+import Tornar from "../../components/Tornar.astro";
+import Layout from "../../layouts/Layout.astro";
+import words from "../../data/castellano.js"
+const { scrabble } = Astro.params;
+
+let rg = new RegExp("^" + scrabble + "$")
+
+---
+
+<Layout titol={scrabble}>
+    <Tornar url="/scrabble" />
+
+    <div class="flex items justify-content flex-col items-center">
+        <h1 class="flex items justify-center mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-black">Paraules que contenen "{scrabble}".</h1>
+    <br />
+
+    <div>
+        <h1 class="mb-4 text-xl font-bold leading-none tracking-tight text-red-800 md:text-2xl lg:text-2xl dark:text-red underline underline-offset-3 decoration-8 decoration-red-400 dark:decoration-red-800"> Hem trobat
+            {
+                words
+                .filter(e => e.includes(scrabble))
+                .slice(0, 500)
+                .map(e => {e}).length
+            } resultats.
+        </h1>
+    </div>
+
+       <br />
+
+
+    <div class="grid grid-cols-3">
+        
+        <table>
+            {
+                words
+                .filter(word => word.match(rg))
+                .map(e => <p class="mx-10">{e}</p>)
+            }
+        </table>
+    </div>
+    </div>
+    
+</Layout>
