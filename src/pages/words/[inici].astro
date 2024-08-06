@@ -17,6 +17,13 @@ const { inici } = Astro.params;
 
     <div>
         <h1 class="mb-4 text-xl font-bold leading-none tracking-tight text-red-800 md:text-2xl lg:text-2xl dark:text-red underline underline-offset-3 decoration-8 decoration-red-400 dark:decoration-red-800"> Hemos encontrado
+=======
+        <h1 class="flex items justify-center mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-black">Palabras que empiezan con  "{inici}".</h1>
+    <br />
+
+    <div>
+        <h1 class="mb-4 text-xl font-bold leading-none tracking-tight text-red-800 md:text-2xl lg:text-2xl dark:text-red underline underline-offset-3 decoration-8 decoration-red-400 dark:decoration-red-800"> Hemos encontrado 
+>>>>>>> Stashed changes
             {
                 words
                 .filter(e => e.startsWith(inici))
