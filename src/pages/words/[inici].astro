@@ -11,17 +11,17 @@ const { inici } = Astro.params;
     <Tornar url="/words" />
 
     <div class="flex items justify-content flex-col items-center">
-        <h1 class="flex items justify-center mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-black">Paraules en castellà que comencen amb "{inici}".</h1>
+        <h1 class="flex items justify-center mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-black">Palabras en castelleno que empiezan por "{inici}".</h1>
     <br />
 
     <div>
-        <h1 class="mb-4 text-xl font-bold leading-none tracking-tight text-red-800 md:text-2xl lg:text-2xl dark:text-red underline underline-offset-3 decoration-8 decoration-red-400 dark:decoration-red-800"> Hem trobat
+        <h1 class="mb-4 text-xl font-bold leading-none tracking-tight text-red-800 md:text-2xl lg:text-2xl dark:text-red underline underline-offset-3 decoration-8 decoration-red-400 dark:decoration-red-800"> Hemos encontrado
             {
                 words
                 .filter(e => e.startsWith(inici))
                 .slice(0, 500)
                 .map(e => {e}).length
-            } resultats.
+            } resultados.
         </h1>
     </div>
 
